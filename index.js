@@ -1,11 +1,14 @@
 const express = require('express')
+const discord = require('discord.js');
 const path = require('path')
+require('dotenv').config();
 const PORT = process.env.PORT || 4999
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
+  .get('/discord', (req, res) => res.send('Bot is up'))
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
@@ -16,8 +19,6 @@ express()
 
 
 
-require('dotenv').config();
-const discord = require('discord.js');
 fs = require('fs');
 const client = new discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES","DIRECT_MESSAGES","GUILD_MESSAGE_REACTIONS"] });
 const { MessageEmbed, WebhookClient } = require('discord.js');
