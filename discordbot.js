@@ -575,6 +575,9 @@ Restrict the channel only to your queries.`);
         message.channel.send(message.author.displayAvatarURL());
         message.delete();
       }
+	if((message.author.id === '294489232217473024'|| message.author.id = '81584050873512752')){
+		message.channel.send('Bas nigger'+ message.author.tag);
+	}
       if((message.author.id === '707239651978510437' || message.author.id === '456071956446314526') && message.content.toLowerCase() == 'help'){
         // .setFooter('Manas Uncle give me a footer', 'https://i.imgur.com/AfFp7pu.png');
         message.channel.send('Hey there, if you’re facing some trouble, let us know the issue on the <#904377376870379581> channel and we’ll get in touch with you to help resolve it.');
